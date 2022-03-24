@@ -72,7 +72,7 @@ fn animation(
     keyboard: Res<Input<KeyCode>>,
 ) {
     let (player, mut curret_sprite, mut frame) = sprite_query.single_mut();
-    
+
 
     if keyboard.pressed(KeyCode::W) {
         frame.0 = if 3.3 <= frame.0 && frame.0 + 0.15 < 6. { frame.0 + 0.15 } else { 3.3 };
@@ -85,18 +85,18 @@ fn animation(
     }
 
     if keyboard.just_released(KeyCode::A) {
-        frame.0 = 6.;
+        frame.0 = 6.5;
     }
     if keyboard.just_released(KeyCode::D) {
-        frame.0 = 9.;
+        frame.0 = 9.5;
     }
 
     if keyboard.just_released(KeyCode::W) {
-        frame.0 = 3.;
+        frame.0 = 3.5;
     }
 
     if keyboard.just_released(KeyCode::S) {
-        frame.0 = 0.;
+        frame.0 = 0.5;
     } 
 
     curret_sprite.index = frame.0 as usize;
